@@ -18,3 +18,22 @@ function calculateAverage(scores) {
     const min = Math.min(...scores); 
     return { max, min };
   }
+
+  function analyzeResults(students) {
+    // Wyodrębnianie wyników (destrukturyzacja)
+    const scores = students.map(({ score }) => score);
+  
+    // srednia
+    const average = calculateAverage(scores);
+  
+    
+    const { max, min } = findMinMax(scores);
+  
+    
+    console.log(`Średnia wyników: ${average.toFixed(2)}`);
+    console.log(`Najwyższy wynik: ${max}`);
+    console.log(`Najniższy wynik: ${min}`);
+  }
+  
+  
+  analyzeResults(students);
